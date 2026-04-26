@@ -1,0 +1,453 @@
+/* === RESET & GLOBAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f8fdf7;
+  color: #2f4f2f;
+}
+
+/* === HEADER === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 45px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  color: #3a7f3a;
+  font-size: 1.4rem;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #3a7f3a;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffc107;
+}
+
+/* === HERO === */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url("../assets/bg-corn.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-content h2 {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background-color: #ffc107;
+  color: #2f4f2f;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #ffb300;
+}
+
+/* === FEATURES === */
+.features {
+  text-align: center;
+  padding: 80px 40px;
+  background-color: #ffffff;
+}
+
+.features h3 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #3a7f3a;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature img {
+  width: 70px;
+  margin-bottom: 15px;
+}
+
+.feature h4 {
+  color: #2f4f2f;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #4f704f;
+}
+
+/* === ABOUT === */
+.about {
+  background: #e7f6e7;
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.about h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #3a7f3a;
+}
+
+.about p {
+  max-width: 700px;
+  margin: auto;
+  color: #4f704f;
+  line-height: 1.6;
+}
+
+/* === CTA === */
+.cta {
+  background: linear-gradient(90deg, #3a7f3a, #6cbf6c);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.cta h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cta .btn {
+  background-color: white;
+  color: #3a7f3a;
+}
+
+.cta .btn:hover {
+  background-color: #e0ffe0;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #3a7f3a;
+  color: white;
+}
+
+/* === DETEKSI PAGE === */
+.deteksi {
+  padding-top: 120px;
+  text-align: center;
+  background: #f9fdf8;
+  min-height: 90vh;
+}
+
+.deteksi .container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.deteksi h2 {
+  font-size: 2rem;
+  color: #3a7f3a;
+  margin-bottom: 10px;
+}
+
+.deteksi p {
+  color: #4f704f;
+  margin-bottom: 30px;
+}
+
+.upload-box {
+  border: 2px dashed #3a7f3a;
+  border-radius: 10px;
+  padding: 40px;
+  background: #ffffff;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.upload-box:hover {
+  background: #f3fff3;
+}
+
+.upload-label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #3a7f3a;
+  font-weight: bold;
+}
+
+.upload-label input {
+  display: none;
+}
+
+#previewImage {
+  margin-top: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.result-box {
+  background: #e7f6e7;
+  padding: 25px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.result-box h3 {
+  color: #3a7f3a;
+  margin-bottom: 10px;
+}
+
+/* === EDUKASI PAGE (FIXED) === */
+.edukasi {
+  padding-top: 120px;
+  background: #f9fdf8;
+  min-height: 100vh;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.edukasi .container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.edukasi h2 {
+  font-size: 2rem;
+  color: #3a7f3a;
+  margin-bottom: 10px;
+}
+
+.edukasi p {
+  color: #4f704f;
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.disease-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* CARD */
+.disease-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s;
+  text-align: left;
+}
+
+.disease-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.disease-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.disease-card h3 {
+  color: #2f4f2f;
+  margin: 15px 15px 10px;
+}
+
+/* PARAGRAF */
+.disease-card p {
+  color: #4f704f;
+  font-size: 0.95rem;
+  margin: 0 15px 8px;
+  line-height: 1.6;
+}
+
+/* LABEL */
+.disease-card p strong {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  color: #2f4f2f;
+}
+
+/* LIST */
+.disease-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0 15px 10px;
+}
+
+/* ITEM */
+.disease-card li {
+  margin-bottom: 5px;
+  line-height: 1.6;
+  color: #4f704f;
+}
+
+/* === TENTANG PAGE === */
+.tentang {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background: #f9fdf8;
+  min-height: 100vh;
+}
+
+.tentang .container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.tentang h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #3a7f3a;
+  margin-bottom: 15px;
+}
+
+.tentang .intro {
+  text-align: center;
+  color: #4f704f;
+  margin-bottom: 50px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text p,
+.about-text ul {
+  color: #4f704f;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+/* ========================= */
+/* FIX KHUSUS HALAMAN DETEKSI */
+/* ========================= */
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffc107;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #2f4f2f;
+  transition: 0.3s;
+}
+
+.upload-label:hover {
+  background: #ffb300;
+}
+
+/* pastikan input benar-benar hilang */
+.upload-label input {
+  display: none !important;
+}
+
+#previewImage {
+  margin: 20px auto;
+  display: block;
+  max-width: 280px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.deteksi .btn {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.result-box {
+  background: #e7f6e7;
+  padding: 25px;
+  margin-top: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .upload-label {
+    width: 100%;
+    justify-content: center;
+  }
+}
