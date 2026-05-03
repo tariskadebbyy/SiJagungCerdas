@@ -6,6 +6,7 @@
   <title>Tentang | SiJagungCerdas</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
 
 <!-- HEADER -->
@@ -14,7 +15,16 @@
     <img src="{{ url_for('static', filename='assets/logo-corn.png') }}" alt="SiJagungCerdas Logo">
     <h1>SiJagungCerdas</h1>
   </div>
-  <nav>
+
+  <!-- HAMBURGER (WAJIB DI LUAR NAV) -->
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <!-- NAV MENU (WAJIB PAKAI CLASS) -->
+  <nav class="nav-menu">
     <a href="{{ url_for('index') }}">Beranda</a>
     <a href="{{ url_for('deteksi') }}">Deteksi</a>
     <a href="{{ url_for('edukasi') }}">Edukasi</a>
@@ -52,7 +62,6 @@
           kemudian dibandingkan dengan data yang sudah dipelajari sebelumnya untuk menentukan apakah tanaman dalam kondisi sehat 
           atau terkena penyakit seperti hawar daun (Blight), karat daun (Rust), dan bercak daun abu-abu (Gray Leaf Spot).
         </p>
-
       </div>
 
       <div class="about-image">
@@ -74,8 +83,11 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>&copy; 2025 SiJagungCerdas. Semua Hak Dilindungi.</p>
+  <p>&copy; 2026 SiJagungCerdas.</p>
 </footer>
+
+<!-- SCRIPT WAJIB -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>
