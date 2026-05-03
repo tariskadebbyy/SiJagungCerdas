@@ -5,14 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edukasi Penyakit Jagung | SiJagungCerdas</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
 <body>
+
   <!-- HEADER -->
   <header>
     <div class="logo">
       <img src="{{ url_for('static', filename='assets/logo-corn.png') }}" alt="SiJagungCerdas Logo">
       <h1>SiJagungCerdas</h1>
     </div>
-    <nav>
+
+    <!-- HAMBURGER -->
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <!-- NAV MENU -->
+    <nav class="nav-menu">
       <a href="{{ url_for('index') }}">Beranda</a>
       <a href="{{ url_for('deteksi') }}">Deteksi</a>
       <a href="{{ url_for('edukasi') }}" class="active">Edukasi</a>
@@ -30,73 +42,63 @@
 
         <!-- Penyakit 1 -->
         <div class="disease-card">
-          <img src="static/assets/blight.jpg" alt="Hawar Daun">
+          <img src="{{ url_for('static', filename='assets/blight.jpg') }}" alt="Hawar Daun">
           <h3>Hawar Daun (Blight)</h3>
 
-          <!-- GEJALA (TIDAK DIUBAH) -->
-          <p><strong> Gejala:</strong> Muncul bercak cokelat memanjang pada daun yang berbentuk seperti cerutu. Bercak biasanya dimulai dari daun bagian bawah dan dapat menyebar ke seluruh daun sehingga daun menjadi kering.</p>
+          <p><strong>Gejala:</strong> Muncul bercak cokelat memanjang pada daun yang berbentuk seperti cerutu. Bercak biasanya dimulai dari daun bagian bawah dan dapat menyebar ke seluruh daun sehingga daun menjadi kering.</p>
 
-          <!-- PENCEGAHAN -->
           <p><strong>Pencegahan:</strong></p>
           <ul>
             <li>Gunakan varietas tahan penyakit seperti Bisi-18 atau Pioneer</li>
             <li>Atur jarak tanam sekitar 70x25 cm agar sirkulasi udara baik</li>
             <li>Lakukan rotasi tanaman dengan kedelai atau kacang tanah</li>
-            <li>Gunakan pupuk berimbang: Urea (Nitrogen), SP-36 (Fosfor), dan KCl (Kalium)</li>
+            <li>Gunakan pupuk berimbang: Urea, SP-36, dan KCl</li>
             <li>Jaga kebersihan lahan dari sisa tanaman terinfeksi</li>
           </ul>
 
-          <!-- PERAWATAN -->
           <p><strong>Perawatan:</strong></p>
           <ul>
             <li>Semprot fungisida berbahan aktif mankozeb atau klorotalonil</li>
-            <li>Lakukan penyemprotan setiap 7–10 hari jika infeksi mulai terlihat</li>
-            <li>Buang daun yang sudah parah agar tidak menyebar</li>
+            <li>Lakukan penyemprotan setiap 7–10 hari</li>
+            <li>Buang daun yang sudah parah</li>
           </ul>
         </div>
 
         <!-- Penyakit 2 -->
         <div class="disease-card">
-          <img src="static/assets/rust.jpg" alt="Karat Daun">
+          <img src="{{ url_for('static', filename='assets/rust.jpg') }}" alt="Karat Daun">
           <h3>Karat Daun (Rust)</h3>
 
-          <!-- GEJALA (TIDAK DIUBAH) -->
-          <p><strong> Gejala:</strong> Muncul bintik-bintik kecil berwarna oranye atau cokelat kemerahan pada permukaan daun. Bintik tersebut terlihat seperti serbuk karat dan dapat menyebar di seluruh daun.</p>
+          <p><strong>Gejala:</strong> Muncul bintik kecil oranye atau cokelat seperti serbuk karat di daun.</p>
 
-          <!-- PENCEGAHAN -->
           <p><strong>Pencegahan:</strong></p>
           <ul>
-            <li>Gunakan varietas tahan karat seperti NK atau Bima series</li>
-            <li>Pemupukan seimbang: Urea, SP-36, dan KCl sesuai kebutuhan tanaman</li>
-            <li>Hindari kelembapan tinggi dengan sistem drainase yang baik</li>
-            <li>Lakukan sanitasi lahan dengan membersihkan sisa tanaman</li>
+            <li>Gunakan varietas tahan seperti NK atau Bima</li>
+            <li>Pemupukan seimbang</li>
+            <li>Hindari kelembapan tinggi</li>
+            <li>Sanitasi lahan</li>
           </ul>
 
-          <!-- PERAWATAN -->
           <p><strong>Perawatan:</strong></p>
           <ul>
-            <li>Gunakan fungisida berbahan aktif azoksistrobin atau propikonazol</li>
-            <li>Semprot secara berkala setiap 7–10 hari</li>
-            <li>Pantau perkembangan penyakit secara rutin</li>
+            <li>Gunakan fungisida azoksistrobin atau propikonazol</li>
+            <li>Semprot tiap 7–10 hari</li>
           </ul>
         </div>
 
         <!-- Penyakit 3 -->
         <div class="disease-card">
-          <img src="static/assets/healthy.jpg" alt="Tanaman Sehat">
+          <img src="{{ url_for('static', filename='assets/healthy.jpg') }}" alt="Tanaman Sehat">
           <h3>Tanaman Sehat</h3>
 
-          <!-- GEJALA (TIDAK DIUBAH) -->
-          <p><strong> Gejala:</strong> Daun berwarna hijau cerah, tidak memiliki bercak atau bintik penyakit, dan pertumbuhan tanaman terlihat normal serta kuat.</p>
+          <p><strong>Gejala:</strong> Daun hijau cerah tanpa bercak, pertumbuhan normal.</p>
 
-          <!-- PERAWATAN -->
           <p><strong>Perawatan:</strong></p>
           <ul>
-            <li>Pemupukan seimbang menggunakan Urea, SP-36, dan KCl sesuai fase pertumbuhan</li>
-            <li>Penyiraman rutin 1–2 kali sehari tergantung kondisi cuaca</li>
-            <li>Pengendalian gulma secara manual atau herbisida selektif</li>
-            <li>Gunakan pestisida jika ada serangan hama seperti ulat atau wereng</li>
-            <li>Monitoring kondisi tanaman setiap minggu</li>
+            <li>Pemupukan seimbang</li>
+            <li>Penyiraman rutin</li>
+            <li>Pengendalian gulma</li>
+            <li>Monitoring rutin</li>
           </ul>
         </div>
 
@@ -106,7 +108,11 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 SiJagungCerdas. Semua Hak Dilindungi.</p>
+    <p>&copy; 2026 SiJagungCerdas.</p>
   </footer>
+
+  <!-- SCRIPT WAJIB -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
 </html>
