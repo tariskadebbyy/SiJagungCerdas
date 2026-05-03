@@ -24,6 +24,28 @@ header {
   z-index: 100;
 }
 
+.nav-menu a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #3a7f3a;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* Tampilan tombol hamburger (Garis 3) default disembunyikan di desktop */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #3a7f3a;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -383,6 +405,7 @@ footer {
     text-align: center;
   }
 }
+
 /* ========================= */
 /* FIX KHUSUS HALAMAN DETEKSI */
 /* ========================= */
@@ -413,7 +436,6 @@ footer {
   background: #ffb300;
 }
 
-/* pastikan input benar-benar hilang */
 .upload-label input {
   display: none !important;
 }
@@ -449,5 +471,151 @@ footer {
   .upload-label {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* ================================= */
+/* TAMBAHAN: HAMBURGER MENU MOBILE */
+/* ================================= */
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu a {
+    margin: 10px 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+}
+
+/* ================================= */
+/* FIX FINAL (WAJIB AGAR MENU TIDAK LANGSUNG MUNCUL) */
+/* ================================= */
+
+.nav-menu {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none !important;
+  }
+
+  .nav-menu.active {
+    display: flex !important;
+  }
+
+  nav a {
+    margin: 10px 0 !important;
+  }
+}
+/* ================================= */
+/* FIX FINAL NAVBAR (DESKTOP vs MOBILE) */
+/* ================================= */
+
+/* DESKTOP: paksa hamburger hilang */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+/* MOBILE: hanya hamburger */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: flex !important;
+  }
+
+  .nav-menu {
+    display: none !important;
+  }
+
+  .nav-menu.active {
+    display: flex !important;
+  }
+}
+/* ========================================= */
+/* 🔥 FINAL FIX HAMBURGER (ANTI KONFLIK TOTAL) */
+/* ========================================= */
+
+/* ===== DESKTOP ===== */
+@media screen and (min-width: 769px) {
+
+  /* hamburger hilang */
+  .menu-toggle {
+    display: none !important;
+  }
+
+  /* menu tampil normal */
+  .nav-menu {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    width: auto !important;
+    padding: 0 !important;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media screen and (max-width: 768px) {
+
+  /* tampilkan hamburger */
+  .menu-toggle {
+    display: flex !important;
+  }
+
+  /* SEMBUNYIKAN TOTAL menu */
+  .nav-menu {
+    display: none !important;
+    position: absolute !important;
+    top: 70px !important;
+    left: 0 !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    background: white !important;
+    padding: 20px 0 !important;
+    align-items: center !important;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
+    z-index: 999 !important;
+  }
+
+  /* munculkan saat klik */
+  .nav-menu.active {
+    display: flex !important;
+  }
+
+  /* rapikan jarak */
+  .nav-menu a {
+    margin: 10px 0 !important;
   }
 }
